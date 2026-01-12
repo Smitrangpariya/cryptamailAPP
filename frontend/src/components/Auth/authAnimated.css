@@ -1,0 +1,300 @@
+/* Auth Component Styles - Responsive & Interactive */
+
+.auth-container {
+    @apply min-h-screen flex items-center justify-center px-4 py-8;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,96C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.auth-card {
+    @apply bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-8 w-full max-w-md;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    @apply text-center mb-8;
+}
+
+.auth-header h1 {
+    @apply text-3xl font-bold text-slate-900 dark:text-white mb-2;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.auth-header p {
+    @apply text-slate-600 dark:text-slate-400;
+}
+
+.auth-form {
+    @apply space-y-6;
+}
+
+.form-group {
+    @apply space-y-2;
+}
+
+.form-group label {
+    @apply block text-sm font-medium text-slate-700 dark:text-slate-300;
+}
+
+.form-group input {
+    @apply w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.dark .form-group input {
+    background: rgba(30, 41, 59, 0.9);
+}
+
+.form-hint {
+    @apply text-xs text-slate-500 dark:text-slate-400;
+}
+
+.form-error {
+    @apply text-xs text-red-500;
+}
+
+.btn {
+    @apply w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 focus:ring-purple-500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none;
+}
+
+.btn-google {
+    @apply bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 focus:ring-slate-500;
+}
+
+.link-button {
+    @apply text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200;
+}
+
+.auth-footer {
+    @apply text-center mt-6 text-sm text-slate-600 dark:text-slate-400;
+}
+
+.error-message {
+    @apply bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-3 rounded-lg text-sm mb-4 border border-red-200 dark:border-red-800;
+}
+
+.info-message {
+    @apply bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 p-3 rounded-lg text-sm mb-4 border border-blue-200 dark:border-blue-800;
+}
+
+.encryption-notice {
+    @apply mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800;
+}
+
+.security-warning {
+    @apply mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .auth-container {
+        @apply px-4 py-6;
+    }
+    
+    .auth-card {
+        @apply p-6;
+    }
+    
+    .auth-header h1 {
+        @apply text-2xl;
+    }
+    
+    .form-group input {
+        @apply px-3 py-2.5 text-base;
+    }
+    
+    .btn {
+        @apply py-2.5 px-3 text-base;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        @apply p-4;
+    }
+    
+    .auth-header h1 {
+        @apply text-xl;
+    }
+    
+    .auth-form {
+        @apply space-y-4;
+    }
+}
+
+/* Dark mode adjustments */
+.dark .auth-container {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.dark .auth-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive hover effects */
+.form-group input:hover {
+    @apply border-purple-400 dark:border-purple-500;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+/* Loading states */
+.loading-spinner {
+    @apply inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin;
+}
+
+/* Date input styling */
+input[type="date"] {
+    @apply text-slate-900 dark:text-slate-100;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply cursor-pointer;
+    filter: invert(0.5);
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* CryptaMail Logo Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes converge {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8) rotate(180deg); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) rotate(0deg); 
+  }
+}
+
+@keyframes draw {
+  0% { 
+    stroke-dasharray: 0 400; 
+    stroke-dashoffset: 200; 
+  }
+  100% { 
+    stroke-dasharray: 400 0; 
+    stroke-dashoffset: 0; 
+  }
+}
+
+@keyframes draw-delayed {
+  0% { 
+    stroke-dasharray: 0 200; 
+    stroke-dashoffset: 100; 
+  }
+  100% { 
+    stroke-dasharray: 200 0; 
+    stroke-dashoffset: 0; 
+  }
+}
+
+@keyframes lock-appear {
+  0% { transform: scale(0) rotate(180deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes dissolve {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes fade-in-text {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-converge {
+  animation: converge 2s ease-out 0.5s forwards;
+}
+
+.animate-draw {
+  animation: draw 1.5s ease-out 1s forwards;
+}
+
+.animate-draw-delayed {
+  animation: draw-delayed 1.5s ease-out 1.2s forwards;
+}
+
+.animate-lock-appear {
+  animation: lock-appear 0.5s ease-out 2.5s forwards;
+}
+
+.animate-dissolve {
+  animation: dissolve 0.8s ease-out 3.2s forwards;
+}
+
+.animate-fade-in-text {
+  animation: fade-in-text 1s ease-out 3.5s forwards;
+}
+
+/* Additional animation for pulse effect */
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Google Sign-In Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.google-spinner {
+    animation: spin 1s linear infinite;
+}

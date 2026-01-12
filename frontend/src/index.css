@@ -1,0 +1,102 @@
+/* Import auth component styles */
+@import './components/Auth/authAnimated.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth theme transitions with accessibility in mind */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Skip to main content for accessibility */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 4px;
+}
+
+.skip-to-main:focus {
+  top: 6px;
+}
+
+/* Focus visible improvements for better keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Animation performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Dark mode specific animation fixes */
+.dark .motion-safe {
+  will-change: transform, opacity;
+}
+
+/* Base styles */
+body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+}
+
+/* Legacy layout dark-mode compatibility & Scrollbars */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Input fix (VERY IMPORTANT) */
+input,
+textarea,
+select {
+    @apply bg-white text-gray-900 border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+
+/* Card & Container backgrounds for consistency */
+.card {
+    @apply bg-white dark:bg-slate-900 shadow rounded-lg;
+}
+
+/* Override plugin styles if necessary */
+.dark .app,
+.dark .main-container,
+.dark .email-container {
+    background-color: transparent;
+    /* Let body handle it or use specific */
+}

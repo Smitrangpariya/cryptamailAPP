@@ -47,3 +47,11 @@ coverage/
 
 # Misc
 *.orig
+
+# Windows device files
+nul
+NUL
+con
+prn
+aux
+

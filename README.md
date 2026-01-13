@@ -43,7 +43,7 @@
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Smitrangpariya/cryptamailAPP.git.git
+    git clone https://github.com/Smitrangpariya/cryptamailAPP.git
     cd cryptamail
     ```
 
